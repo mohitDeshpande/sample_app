@@ -11,11 +11,14 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
+    <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
     <div class="container jumbotron">
-      <%= yield %>
-      
+      <%= yield %> 
     </div>
     <%= render 'layouts/footer' %>
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>
 
