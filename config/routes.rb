@@ -14,6 +14,7 @@ SampleApp::Application.routes.draw do
   # REST resources for users and sessions(sign-in) controller
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :microposts, only: [:create, :destroy]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
